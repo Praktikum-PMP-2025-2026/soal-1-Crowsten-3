@@ -74,7 +74,6 @@ int main() {
     for(int i=0;i<N;++i){
         printf("%d ",arr[i]);
     }
-    printf("\n");
     
     int max_sum = arr[0];
     int sum = arr[0];
