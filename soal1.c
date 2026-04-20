@@ -10,14 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
 int nilai_max(int a, int b){
-    if(a>b){
-        return a;
-    }
-    else if(a<=b){
-        return b;
-    }
+    return (a > b) ? a : b;
 }
 
 
@@ -35,7 +29,10 @@ int main() {
     }
 
     for (int i=0; i<N;++i) {
-        scanf("%d", &arr[i]);
+        if (scanf("%d", &arr[i]) != 1) {
+            free(arr);
+            return 0;
+        }
     }
 
     for (int i=0;i<N;++i) {
@@ -60,7 +57,12 @@ int main() {
             }
 
             if(kiri==1 && kanan==1){
-                arr[i] = ((var_kanan + var_kiri) / 2.0);
+                long sum = (long)var_kanan + var_kiri;
+                int average = (int)(sum / 2);
+                if (sum < 0 && (sum % 2 != 0)) {
+                    average -= 1;
+                }
+                arr[i] = average;
             } else if (kiri==1) {
                 arr[i] = var_kiri;
             } else if (kanan==1) {
@@ -86,5 +88,6 @@ int main() {
     }
 
     printf("MAX_SUM %d",max_sum);
-
+    free(arr);
+    return 0;
 }
