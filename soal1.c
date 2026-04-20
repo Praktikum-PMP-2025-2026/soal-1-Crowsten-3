@@ -11,6 +11,14 @@
 #include <math.h>
 #include <stdlib.h>
 
+int nilai_max(int a, int b){
+    if(a>b){
+        return a;
+    }
+    else if(a<=b){
+        return b;
+    }
+}
 int main (){
     int N;
     scanf("%d",&N);
@@ -41,21 +49,22 @@ int main (){
             if(arr[j]!=-1){
                 int kanan=1;
                 int var_kanan= arr[j];
+                break;
             }
         }
-
-        if(kiri && kanan){
+            if(kiri && kanan){
             arr[i]= (int) floor((var_kiri + var_kanan)/2) ;
-        }
-        else if (kiri){
-            arr[i] = var_kiri;
-        }
-        else if (kanan){
-            arr[i]= var_kanan;
-        }
-        else {
-            arr[i]=0;
-        }
+            }
+            else if (kiri){
+                arr[i] = var_kiri;
+            }
+            else if (kanan){
+                arr[i]= var_kanan;
+            }
+            else {
+                arr[i]=0;
+            }
+
         }
 
         
@@ -70,9 +79,9 @@ int main (){
     int max_sum = arr[0];
     int sum = arr[0];
     
-    for (int i=0;i<N;i++){
-        sum= fmax((int)arr[i],sum + arr[i]);
-        max_sum = fmax(max_sum,sum);        
+    for (int i=1;i<N;++i){
+        sum= nilai_max((int)arr[i],sum + arr[i]);
+        max_sum = nilai_max(max_sum,sum);        
     }
 
     printf("MAX_SUM %d",max_sum);
