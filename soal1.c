@@ -62,14 +62,14 @@ int main() {
 
             if(kiri && kanan){
                 #include <math.h>
-                arr[i] = floor((var_kiri + var_kanan)/2.0) ;
-                } else if (kiri) {
-                    arr[i] = var_kiri;
-                } else if (kanan) {
-                    arr[i] = var_kanan;
-                } else {
-                    arr[i] = 0;
-                }
+                arr[i] = floor((var_kanan + var_kiri) / 2.0);
+            } else if (kiri) {
+                arr[i] = var_kiri;
+            } else if (kanan) {
+                arr[i] = var_kanan;
+            } else {
+                arr[i] = 0;
+            }
         }
     }
 
