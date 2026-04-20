@@ -11,7 +11,12 @@
 #include <stdlib.h>
 #include <math.h>
 int nilai_max(int a, int b){
-    return (a > b) ? a : b;
+    if(a>b){
+        return a;
+    }
+    else if(a<=b){
+        return b;
+    }
 }
 
 
