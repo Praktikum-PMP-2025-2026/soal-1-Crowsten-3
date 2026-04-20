@@ -16,9 +16,12 @@ int main (){
     scanf("%d",&N);
     
     int *arr = (int *)malloc(N * sizeof(int));
+    if(arr== NULL){
+        return 1;
+    }
 
     for(int i=0;i<N;i++){
-        scanf("%d",arr[i]);
+        scanf("%d",&arr[i]);
     }
 
     for(int i=0;i<N;i++){
@@ -33,11 +36,11 @@ int main (){
 
             int kanan=0;
             int var_kanan =0;
-            for(int j=i+1;j<N;j++){
+
+            for(int j=i+1;j<N;++j){
             if(arr[j]!=-1){
                 int kanan=1;
                 int var_kanan= arr[j];
-                break;
             }
         }
 
@@ -58,12 +61,20 @@ int main (){
         
     }
 
-    printf("RECOVERED");
+    printf("RECOVERED ");
     for(int i=0;i<N;i++){
-        print("%d",arr[i]);
+        printf("%d ",arr[i]);
     }
     printf("\n");
     
     int max_sum = arr[0];
+    int sum = arr[0];
+    
+    for (int i=0;i<N;i++){
+        sum= fmax((int)arr[i],sum + arr[i]);
+        max_sum = fmax(max_sum,sum);        
+    }
+
+    printf("MAX_SUM %d",max_sum);
 
 }
