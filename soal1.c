@@ -7,7 +7,6 @@
  * 
  */
 
-
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -60,7 +59,7 @@ int main() {
             }
 
             if (kiri && kanan) {
-                arr[i] = (int)floor((var_kiri + var_kanan) / 2.0);
+                arr[i] = ((var_kiri + var_kanan) / 2.0);
             } else if (kiri) {
                 arr[i] = var_kiri;
             } else if (kanan) {
