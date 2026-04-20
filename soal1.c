@@ -70,7 +70,7 @@ int main() {
         }
     }
 
-    printf("RECOVERED ");
+    printf("RECOVERED");
     for(int i=0;i<N;++i){
         printf(" %d",arr[i]);
     }
