@@ -59,7 +59,8 @@ int main() {
             }
 
             if (kiri && kanan) {
-                arr[i] = ((var_kiri + var_kanan) / 2.0);
+                int x=((var_kiri + var_kanan) / 2);
+                arr[i] = floor(x) ;
             } else if (kiri) {
                 arr[i] = var_kiri;
             } else if (kanan) {
