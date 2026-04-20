@@ -20,6 +20,8 @@ int nilai_max(int a, int b){
     }
 }
 
+#include <math.h>
+
 int main() {
     int N;
     
@@ -59,7 +61,7 @@ int main() {
             }
 
             if(kiri && kanan){
-            arr[i]= floor((var_kiri + var_kanan)/2.0) ;
+            arr[i] = floor((var_kiri + var_kanan)/2.0) ;
             } else if (kiri) {
                 arr[i] = var_kiri;
             } else if (kanan) {
