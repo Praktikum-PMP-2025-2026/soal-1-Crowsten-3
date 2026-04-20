@@ -58,8 +58,8 @@ int main() {
                 }
             }
 
-            if (kiri && kanan) {
-                arr[i] = floor((var_kiri + var_kanan)/2) ;
+            if(kiri && kanan){
+            arr[i]= (int) floor((var_kiri + var_kanan)/2) ;
             } else if (kiri) {
                 arr[i] = var_kiri;
             } else if (kanan) {
