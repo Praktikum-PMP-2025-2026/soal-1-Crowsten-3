@@ -8,8 +8,8 @@
  */
 
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
+#include <math.h>
 
 int nilai_max(int a, int b){
     if(a>b){
@@ -20,7 +20,6 @@ int nilai_max(int a, int b){
     }
 }
 
-#include <math.h>
 
 int main() {
     int N;
@@ -60,12 +59,11 @@ int main() {
                 }
             }
 
-            if(kiri && kanan){
-                #include <math.h>
+            if(kiri==1 && kanan==1){
                 arr[i] = floor((var_kanan + var_kiri) / 2.0);
-            } else if (kiri) {
+            } else if (kiri==1) {
                 arr[i] = var_kiri;
-            } else if (kanan) {
+            } else if (kanan==1) {
                 arr[i] = var_kanan;
             } else {
                 arr[i] = 0;
